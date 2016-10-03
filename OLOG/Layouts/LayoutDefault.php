@@ -2,7 +2,7 @@
 
 namespace OLOG\Layouts;
 
-class LayoutDefault
+use OLOG\HTML;use OLOG\InterfaceAction;class LayoutDefault
 {
 
 static public function render($content_html, $action_obj = null) {
@@ -17,9 +17,36 @@ if ($action_obj) {
 }
 
 $h1_str = '';
-$breadcrumbs_arr = BTConfig::getBreadcrumbsPrefixArr();
+
+$breadcrumbs_arr = [];
 
 if ($action_obj){
+    if ($action_obj instanceof InterfaceTopActionObj) {
+        $top_action_obj = $action_obj->topActionObj();
+        $extra_breadcrumbs_arr = [];
+
+        while ($top_action_obj){
+            $top_action_title = '#NO_TITLE#';
+            if ($top_action_obj instanceof InterfacePageTitle){
+                $top_action_title = $top_action_obj->pageTitle();
+            }
+
+            $top_action_url = '#NO_URL#';
+            if ($top_action_obj instanceof InterfaceAction){
+                $top_action_url = $top_action_obj->url();
+            }
+
+            array_unshift($extra_breadcrumbs_arr, HTML::a($top_action_url, $top_action_title));
+
+            $top_action_obj = null;
+            if ($top_action_obj instanceof InterfaceTopActionObj) {
+                $top_action_obj = $top_action_obj->topActionObj();
+            }
+        }
+
+        $breadcrumbs_arr = array_merge($breadcrumbs_arr, $extra_breadcrumbs_arr);
+    }
+
     if ($action_obj instanceof InterfacePageTitle){
         $h1_str = $action_obj->pageTitle();
     }
@@ -36,13 +63,16 @@ if ($action_obj){
 <div>
     <?php
 
-    if (!empty($breadcrumbs_arr)){
-        echo BT::breadcrumbs($breadcrumbs_arr);
+    foreach ($breadcrumbs_arr as $link_html){
+        echo $link_html;
     }
 
     ?>
-    <h1><?= $h1_str ?></h1>
     <?php
+
+    if ($h1_str != ''){
+        echo '<h1>' . $h1_str . '</h1>';
+    }
 
     if ($page_toolbar_html != ''){
         echo '<div>' . $page_toolbar_html . '</div>';

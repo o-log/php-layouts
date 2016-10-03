@@ -1,10 +1,8 @@
 <?php
-namespace OLOG;
 
-/**
- * Интерфейс для получения лого страницы
- */
-// TODO: remove, actual version is in OLOG\Layouts
+namespace OLOG\Layouts;
+
+
 interface IntefacePageLogoHtml
 {
     /**
