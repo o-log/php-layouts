@@ -2,7 +2,11 @@
 
 namespace OLOG\Layouts;
 
-use OLOG\HTML;use OLOG\InterfaceAction;class LayoutDefault
+use OLOG\HTML;
+use OLOG\InterfaceAction;
+
+class LayoutDefault implements
+    InterfaceLayout
 {
 
 static public function render($content_html, $action_obj = null) {
