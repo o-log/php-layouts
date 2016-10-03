@@ -1,11 +1,9 @@
 <?php
 
-namespace OLOG\BT;
+namespace OLOG\Layouts;
 
 use OLOG\Assert;
 use OLOG\CheckClassInterfaces;
-use OLOG\Layouts\InterfaceLayout;
-use OLOG\Layouts\LayoutsConfig;
 
 class AdminLayoutSelector
 {
