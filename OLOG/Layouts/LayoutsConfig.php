@@ -4,7 +4,7 @@ namespace OLOG\Layouts;
 
 class LayoutsConfig
 {
-    static protected $admin_layout_class_name;
+    static protected $admin_layout_class_name = LayoutDefault::class;
 
     /**
      * @return mixed
