@@ -8,31 +8,13 @@ class MenuItem
     protected $url;
     protected $children_arr;
     protected $icon_classes_str;
-    protected $required_permissions_arr;
 
-    public function __construct($text, $url, $children_arr = null, $icon_classes_str = '', $required_permissions_arr = [])
+    public function __construct($text, $url, $children_arr = null, $icon_classes_str = '')
     {
         $this->setText($text);
         $this->setUrl($url);
         $this->setChildrenArr($children_arr);
         $this->setIconClassesStr($icon_classes_str);
-        $this->setRequiredPermissionsArr($required_permissions_arr);
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getRequiredPermissionsArr()
-    {
-        return $this->required_permissions_arr;
-    }
-
-    /**
-     * @param mixed $required_permissions_arr
-     */
-    public function setRequiredPermissionsArr($required_permissions_arr)
-    {
-        $this->required_permissions_arr = $required_permissions_arr;
     }
 
     /**
