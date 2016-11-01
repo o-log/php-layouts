@@ -6,10 +6,10 @@ class MenuItem
 {
     protected $text;
     protected $url;
-    protected $children_arr;
+    protected $children_arr = [];
     protected $icon_classes_str;
 
-    public function __construct($text, $url, $children_arr = null, $icon_classes_str = '')
+    public function __construct($text, $url, $children_arr = [], $icon_classes_str = '')
     {
         $this->setText($text);
         $this->setUrl($url);
