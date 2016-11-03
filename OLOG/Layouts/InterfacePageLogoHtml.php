@@ -3,7 +3,7 @@
 namespace OLOG\Layouts;
 
 
-interface IntefacePageLogoHtml
+interface InterfacePageLogoHtml
 {
     /**
      * Возвращает html строку, содержащую лого страницы
