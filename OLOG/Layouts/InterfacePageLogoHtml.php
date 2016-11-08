@@ -1,5 +1,7 @@
 <?php
+
 namespace OLOG\Layouts;
+
 
 interface InterfacePageLogoHtml
 {
