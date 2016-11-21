@@ -22,7 +22,6 @@ if ($action_obj) {
 
 $h1_str = '';
 
-$include_head = '';
 $breadcrumbs_arr = [];
 
 if ($action_obj) {
@@ -55,10 +54,6 @@ if ($action_obj) {
 	if ($action_obj instanceof InterfacePageTitle) {
 		$h1_str = $action_obj->pageTitle();
 	}
-
-	if ($action_obj instanceof InterfaceHeadHtml) {
-		$include_head = $action_obj->includeHeadHtml();
-	}
 }
 
 ?><!DOCTYPE html>
@@ -66,7 +61,7 @@ if ($action_obj) {
 <head>
 	<meta charset="utf-8">
 	<title></title>
-	<?= $include_head ?>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 </head>
 <body>
 <div>
