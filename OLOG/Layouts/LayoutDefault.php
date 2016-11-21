@@ -56,8 +56,8 @@ if ($action_obj) {
 		$h1_str = $action_obj->pageTitle();
 	}
 
-	if ($action_obj instanceof InterfaceHead) {
-		$include_head = $action_obj->includeHead();
+	if ($action_obj instanceof InterfaceHeadHtml) {
+		$include_head = $action_obj->includeHeadHtml();
 	}
 }
 

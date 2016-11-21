@@ -2,7 +2,7 @@
 
 namespace OLOG\Layouts;
 
-interface InterfaceHead
+interface InterfaceHeadHtml
 {
-    static public function includeHead();
+	public function includeHeadHtml();
 }
