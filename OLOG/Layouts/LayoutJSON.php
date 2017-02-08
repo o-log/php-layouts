@@ -12,9 +12,8 @@ class LayoutJSON implements InterfaceLayout
         echo json_encode($content, $encode_json_options);
     }
 
-    static public function renderResponse($msg_arr, $success)
+    static public function renderSuccessAndMsgArr($success, $msg_arr, $action_obj)
     {
-        $action_obj = Router::getCurrentActionObj();
         self::render(['success' => $success, 'msg_arr' => $msg_arr], $action_obj);
     }
 }
