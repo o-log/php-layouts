@@ -2,8 +2,6 @@
 
 namespace OLOG\Layouts;
 
-use OLOG\Router;
-
 class LayoutJSON implements InterfaceLayout
 {
     static public function render($content, $action_obj, $encode_json_options = 0)
