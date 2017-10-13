@@ -2,18 +2,21 @@
 
 namespace OLOG\Layouts;
 
+use OLOG\ActionInterface;
 use OLOG\Assert;
 use OLOG\CheckClassInterfaces;
 
 class AdminLayoutSelector
 {
-    static public function render($content_html, $action_obj = null)
+    static public function render($content_html, ActionInterface $action_obj = null)
     {
         $layout_class_name = LayoutsConfig::getAdminLayoutClassName();
 
-        Assert::assert($layout_class_name, 'Admin layout class name not configured');
-        Assert::assert(CheckClassInterfaces::classImplementsInterface($layout_class_name, InterfaceLayout::class), 'Layout class ' . $layout_class_name . ' does not implement InterfaceLayout');
+        if (!$layout_class_name) {
+            throw new \Exception('Admin layout class name not configured');
+        }
 
+        // layout class interface checked when assigning to config
         $layout_class_name::render($content_html, $action_obj);
     }
 }

@@ -2,7 +2,7 @@
 
 namespace OLOG\Layouts;
 
-interface InterfaceCurrentUserName
+interface CurrentUserNameInterface
 {
     public function currentUserName();
 }

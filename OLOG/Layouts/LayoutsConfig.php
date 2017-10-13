@@ -53,6 +53,10 @@ class LayoutsConfig
      */
     public static function setAdminLayoutClassName($admin_layout_class_name)
     {
+        if (!is_a($admin_layout_class_name, LayoutInterface::class, true)) {
+            throw new \Exception('Layout class ' . $admin_layout_class_name . ' does not implement InterfaceLayout');
+        }
+
         self::$admin_layout_class_name = $admin_layout_class_name;
     }
 

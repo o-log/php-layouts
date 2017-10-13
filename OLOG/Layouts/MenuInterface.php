@@ -2,7 +2,7 @@
 
 namespace OLOG\Layouts;
 
-interface InterfaceMenu
+interface MenuInterface
 {
     static public function menuArr();
 }

@@ -2,7 +2,7 @@
 
 namespace OLOG\Layouts;
 
-interface InterfacePageToolbarHtml
+interface PageToolbarHtmlInterface
 {
     public function pageToolbarHtml();
 }

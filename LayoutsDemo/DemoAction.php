@@ -2,10 +2,11 @@
 
 namespace LayoutsDemo;
 
-use OLOG\InterfaceAction;
-use OLOG\Layouts\InterfacePageTitle;
+use OLOG\ActionInterface;
+use OLOG\Layouts\AdminLayoutSelector;
+use OLOG\Layouts\PageTitleInterface;
 
-class DemoAction implements InterfaceAction, InterfacePageTitle
+class DemoAction implements ActionInterface, PageTitleInterface
 {
     public function pageTitle()
     {
@@ -17,7 +18,7 @@ class DemoAction implements InterfaceAction, InterfacePageTitle
     }
 
     public function action(){
-        \OLOG\Layouts\LayoutDefault::render('Content', $this);
+        AdminLayoutSelector::render('Content', $this);
     }
 
 }

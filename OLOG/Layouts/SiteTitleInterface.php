@@ -2,7 +2,7 @@
 
 namespace OLOG\Layouts;
 
-interface InterfaceSiteTitle
+interface SiteTitleInterface
 {
     public function siteTitle();
 }

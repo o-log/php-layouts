@@ -2,7 +2,7 @@
 
 namespace OLOG\Layouts;
 
-interface InterfaceLayout
+interface LayoutInterface
 {
     static public function render($content_html, $action_obj);
 }
