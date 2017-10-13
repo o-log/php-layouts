@@ -3,8 +3,6 @@
 namespace OLOG\Layouts;
 
 use OLOG\ActionInterface;
-use OLOG\Assert;
-use OLOG\CheckClassInterfaces;
 
 class AdminLayoutSelector
 {

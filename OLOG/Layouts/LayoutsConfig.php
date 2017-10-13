@@ -50,6 +50,7 @@ class LayoutsConfig
 
     /**
      * @param mixed $admin_layout_class_name
+     * @throws \Exception
      */
     public static function setAdminLayoutClassName($admin_layout_class_name)
     {

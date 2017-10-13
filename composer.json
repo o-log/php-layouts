@@ -15,7 +15,7 @@
     "o-log/php-router": "2.*"
   },
   "require": {
-    "o-log/php-html": "1.*"
+    "o-log/php-html": "2.*"
   },
   "autoload": {
     "psr-0": {
