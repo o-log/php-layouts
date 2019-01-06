@@ -1,9 +1,13 @@
 <?php
+declare(strict_types=1);
+
+/**
+ * @author Oleg Loginov <olognv@gmail.com>
+ */
 
 namespace OLOG\Layouts;
 
 use OLOG\ActionInterface;
-use OLOG\HTML;
 
 class LayoutDefault implements
 	LayoutInterface
@@ -40,7 +44,11 @@ if ($action_obj) {
 				$top_action_url = $top_action_obj->url();
 			}
 
-			array_unshift($extra_breadcrumbs_arr, HTML::tag('a', ['href' => $top_action_url], $top_action_title));
+			array_unshift(
+			        $extra_breadcrumbs_arr,
+                    //HTML::tag('a', ['href' => $top_action_url], $top_action_title)
+                    '<a href="' . filter_var($top_action_url, FILTER_SANITIZE_URL) . '">' . filter_var($top_action_title, FILTER_SANITIZE_STRING) . '</a>'
+            );
 
 			$top_action_obj = null;
 			if ($top_action_obj instanceof TopActionObjInterface) {

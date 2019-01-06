@@ -5,7 +5,8 @@
     "o-log/php-router": "2.*"
   },
   "require": {
-    "o-log/php-html": "2.*"
+    "php": ">=7.2",
+    "ext-json": "*"
   },
   "autoload": {
     "psr-0": {

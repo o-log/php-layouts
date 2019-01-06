@@ -1,4 +1,9 @@
 <?php
+declare(strict_types=1);
+
+/**
+ * @author Oleg Loginov <olognv@gmail.com>
+ */
 
 namespace OLOG\Layouts;
 
@@ -8,10 +13,5 @@ class LayoutJSON implements LayoutInterface
     {
         header('Content-Type: application/json; charset=utf-8');
         echo json_encode($content, $encode_json_options);
-    }
-
-    static public function renderSuccessAndMsgArr($success, $msg_arr, $action_obj)
-    {
-        self::render(['success' => $success, 'msg_arr' => $msg_arr], $action_obj);
     }
 }
